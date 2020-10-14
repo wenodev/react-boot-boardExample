@@ -18,3 +18,9 @@ out/
 frontend/node_modules
 src/main/resources/static/
 src/main/resources/templates/
+board-admin-api/src/main/java/com/example/board/application/
+board-admin-api/src/main/resources/static/
+board-admin-api/src/main/resources/templates/
+board-common/src/main/resources/static/
+board-common/src/main/resources/templates/
+board-user-api/

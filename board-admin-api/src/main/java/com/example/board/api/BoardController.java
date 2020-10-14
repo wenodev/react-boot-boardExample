@@ -1,5 +1,8 @@
-package com.example.board;
+package com.example.board.api;
 
+import com.example.board.Board;
+import com.example.board.BoardRepository;
+import com.example.board.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,19 +21,19 @@ public class BoardController {
     private BoardRepository boardRepository;
 
     // get all employees
-    @GetMapping("/employees")
+    @GetMapping("/boards")
     public List<Board> getAllEmployees() {
         return boardRepository.findAll();
     }
 
     // create employee rest api
-    @PostMapping("/employees")
+    @PostMapping("/boards")
     public Board createEmployee(@RequestBody Board board) {
         return boardRepository.save(board);
     }
 
     // get employee by id rest api
-    @GetMapping("/employees/{id}")
+    @GetMapping("/boards/{id}")
     public ResponseEntity<Board> getEmployeeById(@PathVariable Long id) {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
@@ -39,21 +42,20 @@ public class BoardController {
 
     // update employee rest api
 
-    @PutMapping("/employees/{id}")
+    @PutMapping("/boards/{id}")
     public ResponseEntity <Board> updateEmployee(@PathVariable Long id, @RequestBody Board boardDetails) {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
 
         board.setTitle(boardDetails.getTitle());
         board.setContent(boardDetails.getContent());
-        board.setDateTime(boardDetails.getDateTime());
 
         Board updatedBoard = boardRepository.save(board);
         return ResponseEntity.ok(updatedBoard);
     }
 
     // delete employee rest api
-    @DeleteMapping("/employees/{id}")
+    @DeleteMapping("/boards/{id}")
     public ResponseEntity <Map< String, Boolean >> deleteEmployee(@PathVariable Long id) {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));

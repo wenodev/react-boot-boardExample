@@ -1,5 +1,6 @@
 package com.example.board;
 
+import com.example.board.config.BaseEntity;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,8 +9,8 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "employees")
-public class Board {
+public class Board extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -20,6 +21,4 @@ public class Board {
     @Column
     private String content;
 
-    @Column
-    private LocalDateTime dateTime;
 }
