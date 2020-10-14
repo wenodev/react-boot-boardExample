@@ -15,7 +15,7 @@ out/
 
 ### VS Code ###
 .vscode/
-frontend/node_modules
+board-admin-frontend/node_modules
 src/main/resources/static/
 src/main/resources/templates/
 board-admin-api/src/main/java/com/example/board/application/
