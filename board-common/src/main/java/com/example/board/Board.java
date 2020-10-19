@@ -4,7 +4,6 @@ import com.example.board.config.BaseEntity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 
 @Data

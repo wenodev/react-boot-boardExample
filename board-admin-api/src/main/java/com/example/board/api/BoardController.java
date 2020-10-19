@@ -3,7 +3,7 @@ package com.example.board.api;
 import com.example.board.Board;
 import com.example.board.BoardRepository;
 import com.example.board.ResourceNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,25 +11,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@AllArgsConstructor
 @RequestMapping("/api/v1/")
 public class BoardController {
 
-    @Autowired
-    private BoardRepository boardRepository;
+    BoardRepository boardRepository;
 
     // get all employees
     @GetMapping("/boards")
-    public List<Board> getAllEmployees() {
-        return boardRepository.findAll();
+    public ResponseEntity<List<Board>> getAllEmployees() {
+        List<Board> boardList = boardRepository.findAll();
+        return ResponseEntity.ok(boardList);
     }
 
     // create employee rest api
     @PostMapping("/boards")
-    public Board createEmployee(@RequestBody Board board) {
-        return boardRepository.save(board);
+    public ResponseEntity<Board> createEmployee(@RequestBody Board board) {
+        Board createdBoard = boardRepository.save(board);
+        return ResponseEntity.ok(createdBoard);
     }
 
     // get employee by id rest api
@@ -37,6 +38,8 @@ public class BoardController {
     public ResponseEntity<Board> getEmployeeById(@PathVariable Long id) {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
+
+
         return ResponseEntity.ok(board);
     }
 

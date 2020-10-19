@@ -24,3 +24,4 @@ board-admin-api/src/main/resources/templates/
 board-common/src/main/resources/static/
 board-common/src/main/resources/templates/
 board-user-api/
+board-admin-api/src/main/java/com/example/user/application/
