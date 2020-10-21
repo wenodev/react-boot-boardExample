@@ -2,6 +2,7 @@ package com.example.board.api;
 
 import com.example.board.Board;
 import com.example.board.BoardRepository;
+import com.example.board.ExceptionController;
 import com.example.board.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -39,12 +40,10 @@ public class BoardController {
         Board board = boardRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
 
-
         return ResponseEntity.ok(board);
     }
 
     // update employee rest api
-
     @PutMapping("/boards/{id}")
     public ResponseEntity <Board> updateEmployee(@PathVariable Long id, @RequestBody Board boardDetails) {
         Board board = boardRepository.findById(id)
