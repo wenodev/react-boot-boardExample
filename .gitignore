@@ -15,14 +15,19 @@ out/
 
 ### VS Code ###
 .vscode/
+
 board-admin-frontend/node_modules
-src/main/resources/static/
-src/main/resources/templates/
-board-admin-api/src/main/java/com/example/board/application/
+
+board-admin-api/build
 board-admin-api/src/main/resources/static/
 board-admin-api/src/main/resources/templates/
+
+board-user-frontend/node_modules
+
+board-user-api/build
+board-user-api/src/main/resources/static
+board-user-api/src/main/resources/templates
+
+board-common/build
 board-common/src/main/resources/static/
 board-common/src/main/resources/templates/
-board-user-api/
-board-admin-api/src/main/java/com/example/user/application/
-board-admin-api/src/test/groovy/
