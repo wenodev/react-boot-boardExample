@@ -5,7 +5,6 @@ jar {
     enabled = true
 }
 
-
 dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -17,6 +16,7 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 }
+
 
 test {
     useJUnitPlatform()

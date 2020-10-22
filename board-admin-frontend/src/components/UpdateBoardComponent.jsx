@@ -59,7 +59,6 @@ class UpdateBoardComponent extends Component {
                             <h3 className="text-center">Update Board</h3>
                             <div className="card-body">
                                 <form>
-
                                     <div className="form-group">
                                         <label> Title: </label>
                                         <input placeholder="Title" name="title" className="form-control"

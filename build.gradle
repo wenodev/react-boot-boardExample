@@ -12,8 +12,7 @@ buildscript {
 }
 
 subprojects {
-    group 'com.example.board'
-    group 'com.example.user'
+    group 'com.board'
 
     version '1.0'
 
