@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios';
 
 
-axios.get('http://localhost:8081/v1/api/inquiries')
-    .then(response => { console.log(response); })
-    .catch(response => { console.log(response); });
+
 
 
 class HomeContent extends Component {
@@ -18,11 +15,6 @@ class HomeContent extends Component {
                     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
                     <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                 </div>
-
-                <div>
-                    aaa
-                </div>
-
             </div>
         )
     }

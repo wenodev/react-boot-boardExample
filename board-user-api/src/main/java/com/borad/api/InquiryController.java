@@ -6,13 +6,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/v1/api")
+@RequestMapping("/api/v1")
 public class InquiryController {
 
     private InquiryService inquiryService;
@@ -31,6 +29,10 @@ public class InquiryController {
 
     @PostMapping("/inquiries")
     public ResponseEntity<Inquiry> createInquires(@RequestBody Inquiry inquiryResource){
+        System.out.println("===inquiry===");
+        System.out.println(inquiryResource.getTitle());
+        System.out.println(inquiryResource.getContent());
+        System.out.println();
         Inquiry inquiry = inquiryService.createInquiries(inquiryResource);
         return new ResponseEntity(inquiry, HttpStatus.CREATED);
     }
