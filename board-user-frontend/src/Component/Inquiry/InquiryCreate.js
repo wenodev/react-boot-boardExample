@@ -1,15 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-
 
 const INQUIRY_API_BASE_URL = "http://localhost:8081/api/v1/inquiries";
-
 
 export default class InquiryCreate extends Component {
 
@@ -59,7 +51,6 @@ export default class InquiryCreate extends Component {
                     <div><span>제목 : </span><input onChange={this.changeTitle}></input></div>
                     <div><span>내용 : </span><input onChange={this.changeContent}></input></div>
                     <button onClick={this.saveInquiry}>제출</button>
-                    {/* <button onClick={() => { history.push('/') }}> 이동! </button> */}
                 </div>
             </div>
         )

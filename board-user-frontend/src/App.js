@@ -10,6 +10,7 @@ import Footer from './Component/Footer';
 import Home from './Component/Home/HomeContent'
 import InquiryTable from './Component/Inquiry/InquiryTable'
 import InquiryCreate from './Component/Inquiry/InquiryCreate'
+import Login from './Component/Login/Login'
 
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={Home}></Route>
-          <Route path="/inquiries" exact component={InquiryTable}></Route>
-          <Route path="/add-inquiry" exact component={InquiryCreate}></Route>
+          <Route path="/inquiries" component={InquiryTable}></Route>
+          <Route path="/add-inquiry" component={InquiryCreate}></Route>
+          <Route path="/login" component={Login}></Route>
         </Switch>
         <Footer />
       </Router>
